@@ -1,0 +1,541 @@
+/* === General Styles === */
+body {
+  background-color: #121212;
+  color: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+h1, h2, h3, h4, h5, h6, .section-title {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #FF6B35;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FFA600;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.hero {
+  padding: 6rem 2rem 8rem 2rem; /* top right bottom left */
+}
+
+
+/* === Scroll Cue === */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+
+/* === HOME SECTION === */
+
+.companylogo {
+  position: relative;
+  left: 20px;       /* distance from left edge */
+  top: 50%;         /* vertically centered */
+  transform: translateY(-50%);
+  animation: float 3s ease-in-out infinite;
+  width: 200px;
+  z-index: 999;     /* keep it on top of other elements */
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+
+
+
+
+
+/* === ABOUT SECTION === */
+#about {
+  position: relative;
+  background: rgba(31, 31, 31, 0.4);
+  background-image: linear-gradient(135deg, rgba(31, 31, 31, 0.4) 0%, rgba(51, 51, 51, 0.4) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #f5f5f5;
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1;
+}
+
+/* Optional decorative overlay */
+#about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03), transparent 70%);
+  z-index: -1;
+}
+
+.section-title {
+  color: #FF6B35;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.section-title:hover {
+  color: #FFA600;
+}
+
+#about p.lead {
+  color: #ccc;
+}
+
+#about h5 {
+  color: #FFA600;
+  margin-top: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+#about p,
+.about-section p {
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+#about p:hover,
+#about h5:hover {
+  color: #ffffff;
+}
+
+.about-section img {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.about-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-section i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.about-section i:hover {
+  transform: scale(1.2) rotate(-5deg);
+  color: #ffffff;
+}
+
+.about-section i.text-brand {
+  color: #FF6B35;
+}
+
+.wave-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+.wave-path {
+  fill: #f4f4f4;
+  transition: fill 0.3s ease-in-out;
+}
+
+/* Optional: Light-to-dark transition style */
+.section-dark + .wave-divider .wave-path {
+  fill: #1f1f1f;
+}
+
+/* Optional: Reverse wave */
+.wave-divider.reverse svg {
+  transform: rotate(180deg);
+}
+
+
+/* === Products Section === */
+
+/* =========================
+   Products Section Styling
+========================= */
+
+#products .product-item {
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#products {
+  position: relative;
+  padding: 6rem 0;
+  background: url('https://img.freepik.com/premium-vector/elegant-yellow-black-gold-grainy-gradient-background-design_192472350.jpg') center/cover no-repeat;
+  color: #fff;
+   margin-bottom: 4rem;
+}
+#products .product-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+#products .product-item svg {
+  transition: transform 0.3s ease;
+}
+
+#products .product-item:hover svg {
+  transform: scale(1.1);
+}
+
+#products .product-item h5 {
+  margin-top: 1rem;
+  color: #333;
+}
+
+#products .product-item p {
+  margin: 0.5rem 0 0;
+  color: #666;
+}
+
+
+/* === Reviews Section === */
+
+
+.reviews-section .carousel-inner {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px); /* adds frosted-glass effect */
+  -webkit-backdrop-filter: blur(6px);
+}
+
+
+
+.reviews-section .section-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.reviews-section .carousel-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.reviews-section .carousel-item {
+  transition: all 0.5s ease-in-out;
+}
+
+.reviews-section i.fa-user-circle {
+  color: #FF6B35;
+}
+
+.reviews-section blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.reviews-section .review-name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.reviews-section .stars {
+  font-size: 1.5rem;
+  color: #FF6B35;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+
+   color: #FF6B35;
+}
+
+@media (max-width: 768px) {
+  .reviews-section blockquote {
+    font-size: 1rem;
+  }
+}
+
+.reviews-section {
+    margin-bottom: 8rem;
+}
+
+.contact-divider {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(135deg, #e9a93a, #e2e0e0);
+  clip-path: polygon(0 0, 100% 100%, 0% 100%);
+}
+
+/* Curve Divider */
+.curve-divider svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+  margin-top: -1px;
+}
+
+/* Contact Section */
+
+
+.contact-section {
+  background: rgba(31, 31, 31, 0.4); /* semi-transparent black */
+  background-image: linear-gradient(135deg, rgba(31, 31, 31, 0.4) 0%, rgba(51, 51, 51, 0.4) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.contact-info li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info i {
+  color:  #FF6B35;
+}
+
+.contact-form {
+  background-color: #050505;
+  border-radius: 15px;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.btn-brand {
+  background-color: #f3ece9;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-brand:hover {
+  background-color: #f3ece9;
+}
+
+.social-links a {
+  font-size: 1.25rem;
+  color:  #FF6B35;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #000;
+}
+
+.contact-section {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.9); /* optional: dark overlay background */
+   margin-bottom: 12rem;
+}
+
+
+/* === Navbar === */
+
+   .navbar {
+      background-color: #1f1f1f86 !important;
+    }
+
+    .navbar-brand {
+      color: #FF6B35 !important;
+      font-family: 'Bebas Neue', cursive;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #FFA600 !important;
+}
+
+/* === Buttons === */
+.btn-primary {
+  background-color: #FF6B35;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #FFA600;
+  color: #000;
+}
+
+/* === Cards === */
+.card {
+  background-color: #1f1f1f;
+  color: #f5f5f5;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: #000000;
+}
+
+.carousel-item p {
+  color: #ddd;
+}
+
+/* === Footer === */
+
+
+footer a {
+  color: #FF6B35;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: #FFA600;
+}
+/* Floating buttons - placed stacked on the right */
+
+/* Back to Top (above WhatsApp) */
+.back-top {
+  position: fixed;
+  bottom: 90px;        /* higher */
+  right: 20px;
+  display: none;       /* shown via JS when scrolled */
+  z-index: 1001;       /* higher than WhatsApp */
+  background: #FF6B35;
+  color: #000;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.back-top:hover {
+  background: #FFA600;
+  transform: translateY(-3px);
+}
+
+/* WhatsApp (below Back to Top) */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;        /* lower */
+  right: 20px;
+  z-index: 999;       /* lower than Back to Top */
+  display: inline-block;
+  transition: transform 0.18s ease;
+}
+.whatsapp-float img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+.whatsapp-float:hover img {
+  transform: scale(1.06);
+}
+
+
+/* === Contact Form === */
+form label {
+  color: #FFA600;
+}
+
+form .form-control {
+  background-color: #1f1f1f;
+  border: 1px solid #444;
+  color: #f5f5f5;
+}
+
+form .form-control:focus {
+  border-color: #FF6B35;
+  box-shadow: none;
+}
+
+/* === Chatbox Placeholder === */
+#tawk-chat {
+  border: 1px dashed #FFA600;
+  color: #f5f5f5;
+}
+
+/* === Utilities === */
+.text-warning {
+  color: #FFA600 !important;
+}
+
+.bg-light {
+  background-color: #1f1f1f !important;
+}
+
+.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
